@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Bericolor
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <form (ngSubmit)="calculer()">
+            <ion-item>
+              <ion-label fixed>
+                Metrage
+              </ion-label>
+              <ion-input [(ngModel)]="metrage" name="metrage" type="number"></ion-input>
+            </ion-item>
+            <button ion-button type="submit" block>Calculer</button>
+          </form>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <ion-card *ngIf='show'>
+              <ion-card-header>
+                Results
+              </ion-card-header>
+                <ion-list>
+                  <ion-item>
+                    Coupon 2.65 : {{nb265}}
+                  </ion-item>
+                  <ion-item>
+                    Coupon 2.85 : {{nb285}}
+                  </ion-item>
+                  <ion-item>
+                    Chut : {{chut}}
+                  </ion-item>
+                </ion-list>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
